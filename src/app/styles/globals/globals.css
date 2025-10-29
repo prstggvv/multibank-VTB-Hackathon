@@ -1,0 +1,8 @@
+@import url('../fonts.css');
+
+:root {
+  --color-black: #000;
+  --color-premium: rgba(0, 0, 0, 1);
+  --color-light: rgba(255, 255, 255, 1);
+  --background-color-premium: rgba(244, 246, 250, 1);
+}
