@@ -6,12 +6,9 @@ ___
 ## Содержание
 - [Статус проекта](#статус-проекта)
 - [Сведения о команде](#сведения-о-команде)
-- [Полезные ссылки](#полезные-ссылки)
 - [Стек используемых технологий](#стек-используемых-технологий)
-- [Брендбук проекта](#брендбук-проекта)
 - [Установка проекта](#установка-проекта)
 - [Запуск проекта](#запуск-проекта)
-- [Проверка линтинга](#проверка-линтинга)
 ___
 
 ## Статус проекта
@@ -20,15 +17,8 @@ ___
 
 ## Сведения о команде
 Команда №2:
-- Фронтенд разработчики: [Никита Хоменко](https://github.com/kirill-Begej), [Иван Чернышев](https://github.com/VanyaGachist2)
+- Фронтенд разработчики: [Никита Хоменко](https://github.com/NikitKhom), [Иван Чернышев](https://github.com/prstggvv)
 - Бэкенд разработчики: Богдан Полев
-___
-
-## Полезные ссылки
-- [Страница онбординга проекта](https://norikov.notion.site/568508697c74422d8077142bb7449791)
-- [Техническое задание проекта](https://disk.yandex.ru/d/fikfo1dHbaYXIw)
-- [Дизайн-макет проекта](https://www.figma.com/design/AE3HDcsJW1TVgCAPs41hGM/%D0%9A%D0%90%D0%A0%D0%94%D0%9E?node-id=0-1&t=4d9uFUM08EaUvUH8-0)
-- [Miro проекта](https://miro.com/app/board/uXjVK1qJFAA=/)
 ___
 
 ## Стек используемых технологий
@@ -39,21 +29,17 @@ ___
 - [TypeScript](https://www.typescriptlang.org/)
 ___
 
-## Брендбук проекта
-[Ссылка на шрифты, изображения, логотипы используемые в проекте](https://drive.google.com/drive/folders/1r16v19Z-oE0mTDHv948GKLwi9FjuP9l9?usp=drive_link)
-___
-
 ## Установка проекта
 Для установки зависимостей и запуска проекта необходим [NodeJS](https://nodejs.org/en).  
 
 Клонируйте проект при помощи HTTPS:
 ```sh
-$ git clone https://github.com/Kirill-Begej/kardo-frontend.git
+$ git clone https://github.com/prstggvv/multibank-VTB-Hackathon.git
 ```
 
 Клонируйте проект при помощи SSH:
 ```sh
-$ git clone git@github.com:Kirill-Begej/kardo-frontend.git
+$ git clone git@github.com:prstggvv/multibank-VTB-Hackathon.git
 ```
 
 Для установки зависимостей выполните команду:
@@ -68,39 +54,8 @@ ___
 npm run start
 ```
 
-Чтобы выполнить development сборку используйте команду: 
-```sh
-npm run build:dev
-```
-
-Чтобы выполнить production сборку используйте команду: 
+Чтобы выполнить сборку используйте команду: 
 ```sh
 npm run build
-```
-___
-
-## Проверка линтинга
-Для проверки TypeScript-файлов используется ESLint с конфигурацией airbnb-base.
-
-Чтобы проверить ts-файлы используйте команду:
-```sh
-npm run lint:ts
-```
-
-Чтобы проверить ts-файлы и исправить их используйте команду:
-```sh
-npm run lint:ts:fix
-```
-
-Для проверки CSS-файлов используется Stylelint.
-
-Чтобы проверить css-файлы используйте команду:
-```sh
-npm run lint:css
-```
-
-Чтобы проверить css-файлы и исправить их используйте команду:
-```sh
-npm run lint:css:fix
 ```
 ___
