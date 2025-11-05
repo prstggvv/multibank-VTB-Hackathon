@@ -1,0 +1,154 @@
+.transactions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section-title {
+  font-family: var(--font-inter-bold);
+  font-size: 20px;
+  color: var(--color-premium);
+}
+
+.tabs {
+  display: flex;
+  gap: 24px;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 8px 0;
+  color: var(--color-muted);
+  font-family: var(--font-inter-medium);
+  cursor: pointer;
+}
+
+.tab--active {
+  color: var(--color-premium);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.table {
+  background: var(--color-light);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.thead,
+.row {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1fr 1fr 1.4fr 1fr 1fr;
+  align-items: center;
+}
+
+.thead {
+  padding: 16px 20px;
+  background: var(--table-header-bg);
+  color: rgba(113, 142, 191, 1);
+}
+
+.headCell {
+  border-right: 1px solid var(--divider-color);
+  padding-right: 10px;
+}
+
+.headCellLast {
+  border-right: none;
+}
+
+.headerText {
+  font-family: var(--font-inter-medium);
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.tbody .row {
+  padding: 16px 20px;
+  border-top: 1px solid var(--divider-color);
+}
+
+.tbody .row:hover {
+  background: var(--row-hover-bg);
+}
+
+.cell {
+  color: var(--color-premium);
+  padding-right: 10px;
+}
+
+.cellText {
+  font-size: 16px;
+  line-height: 19px;
+  font-family: var(--font-inter-regular);
+}
+
+.desc {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dir {
+  width: 18px;
+  height: 18px;
+  filter: invert(39%) sepia(76%) saturate(3287%) hue-rotate(214deg) brightness(93%) contrast(101%);
+}
+
+.amount {
+  font-family: var(--font-inter-medium);
+}
+
+.amount--neg {
+  color: var(--color-negative);
+}
+
+.amount--pos {
+  color: var(--color-positive);
+}
+
+.btn-outlined {
+  background: transparent;
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-primary);
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-family: var(--font-inter-medium);
+  cursor: pointer;
+}
+
+.btn-outlined:hover {
+  background: rgba(47, 73, 209, 0.06);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-end;
+  padding: 16px 8px;
+}
+
+.link {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  cursor: pointer;
+  font-family: var(--font-inter-medium);
+}
+
+.page {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: var(--color-premium);
+  cursor: pointer;
+}
+
+.page--active {
+  background: var(--color-primary);
+  color: var(--color-light);
+}

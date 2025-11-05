@@ -1,0 +1,29 @@
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  width: 420px;
+  background: var(--color-light);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modalTitle { font-family: var(--font-inter-bold); font-size: 18px; color: var(--color-premium); }
+.modalRow { display: flex; flex-direction: column; gap: 6px; }
+.modalInput { padding: 10px 12px; border-radius: 10px; border: 1px solid var(--divider-color); background: #fff; }
+.modalActions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 8px; }
+.btn { padding: 10px 14px; border-radius: 10px; border: none; cursor: pointer; font-family: var(--font-inter-medium); }
+.btnPrimary { background: var(--color-primary); color: var(--color-light); }
+.btnGhost { background: transparent; color: var(--color-primary); }
+

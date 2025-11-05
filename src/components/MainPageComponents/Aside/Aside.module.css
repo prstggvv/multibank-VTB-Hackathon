@@ -1,0 +1,55 @@
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bank-card {
+  padding: 20px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #5a4bff 100%);
+  box-shadow: var(--shadow-lg);
+  color: var(--color-light);
+  height: 112px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bank-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bank-card__icon {
+  width: 28px;
+  height: 28px;
+}
+
+.bank-card__chip {
+  width: 20px;
+  height: 14px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.bank-card__title {
+  font-family: var(--font-inter-bold);
+  font-size: 18px;
+}
+
+.add-card {
+  height: 112px;
+  border-radius: 16px;
+  background: var(--color-light);
+  border: none;
+  box-shadow: var(--shadow-md);
+  font-size: 28px;
+  color: var(--color-premium);
+  font-family: var(--font-inter-medium);
+}
+
+.add-card:hover {
+  box-shadow: var(--shadow-lg);
+}

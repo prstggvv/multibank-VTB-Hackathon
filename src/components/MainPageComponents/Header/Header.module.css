@@ -1,0 +1,93 @@
+.header {
+  width: 100%;
+  margin: 0;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 33px 41px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 66px;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 183px;
+  height: 36px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.mainBlock {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 28px;
+  font-family: var(--font-inter-medium);
+  line-height: 34px;
+  margin: 0;
+}
+
+.mainBlock {
+  display: flex;
+  align-items: center;
+}
+
+.mainInfo {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.label {
+  min-height: 50px;
+  position: relative;
+  max-width: 255px;
+}
+
+.input {
+  background-color: rgba(245, 247, 250, 1);
+  border-radius: 40px;
+  border: 1px solid rgba(227, 232, 239, 1);
+  color: rgba(139, 163, 203, 1);
+  font-size: 15px;
+  font-family: var(--font-inter-regular);
+  line-height: 18px;
+  letter-spacing: 5%;
+  outline: none;
+  padding: 16px 60px;
+  width: 100%;
+}
+
+.svgLoop {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+}
+
+.round {
+  border-radius: 50%;
+  background-color: rgba(245, 247, 250, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.svg {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  object-position: center;
+  margin: 0;
+}
