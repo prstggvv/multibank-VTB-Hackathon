@@ -66,6 +66,9 @@
 
 .tbody .row {
   padding: 16px 20px;
+}
+
+.tbody .row:nth-of-type(1) {
   border-top: 1px solid var(--divider-color);
 }
 
@@ -90,10 +93,20 @@
   gap: 10px;
 }
 
+.imageWrapper {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid rgba(113, 142, 191, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
 .dir {
-  width: 18px;
-  height: 18px;
-  filter: invert(39%) sepia(76%) saturate(3287%) hue-rotate(214deg) brightness(93%) contrast(101%);
+  width: 10px;
+  height: 10px;
 }
 
 .amount {

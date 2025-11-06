@@ -1,8 +1,10 @@
 <template>
   <div :class="cls.row">
     <div :class="[cls.cell, cls.desc]">
-      <img :class="cls.dir" :style="item.amount > 0 ? 'transform: rotate(180deg)' : ''"
-        src="/src/shared/assets/images/icons/arrow.svg" alt="dir" />
+      <div :class="cls.imageWrapper">
+        <img :class="cls.dir" :style="item.amount > 0 ? 'transform: rotate(180deg)' : ''"
+          src="/src/shared/assets/images/icons/arrow.svg" alt="dir" />
+      </div>
       <p :class="cls.cellText">{{ item.description }}</p>
     </div>
     <div :class="cls.cell">
