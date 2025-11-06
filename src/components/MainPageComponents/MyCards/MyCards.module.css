@@ -4,7 +4,7 @@
   gap: 16px;
 }
 
-.section-title {
+.mainTitle {
   font-family: var(--font-inter-bold);
   font-size: 20px;
   color: var(--color-premium);
@@ -21,6 +21,9 @@
   padding: 20px;
   box-shadow: var(--shadow-md);
   transition: background .3s ease, color .3s ease, box-shadow .3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .card:hover {
@@ -37,23 +40,39 @@
   color: var(--color-premium);
 }
 
-.card__row {
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 29px;
+}
+
+.mainRow {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 .label {
   font-size: 12px;
-  opacity: 0.8;
+  font-family: var(--font-inter-regular);
+  margin: 0;
+  line-height: 14px;
 }
 
 .value {
-  font-family: var(--font-inter-bold);
   font-size: 20px;
+  font-family: var(--font-inter-regular);
+  line-height: 24px;
+  margin: 0;
 }
 
-.value--sm {
+.valueSum {
   font-size: 14px;
   font-family: var(--font-inter-medium);
 }
@@ -62,10 +81,15 @@
   margin-top: 16px;
 }
 
-.card__number {
-  margin-top: 16px;
-  letter-spacing: 1px;
-  font-family: var(--font-inter-medium);
+.block {
+  width: 100%;
+}
+
+.number {
+  font-family: var(--font-inter-regular);
+  font-size: 22px;
+  line-height: 26px;
+  margin: 0;
 }
 
 .chip {

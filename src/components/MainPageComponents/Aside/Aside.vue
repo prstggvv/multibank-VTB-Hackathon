@@ -1,24 +1,20 @@
 <template>
-  <aside :class="s.aside">
-    <div :class="s['bank-card']">
-      <div :class="s['bank-card__header']">
-        <img :class="s['bank-card__icon']" src="/src/shared/assets/images/icons/Logo.svg" alt="bank" />
-        <span :class="s['bank-card__chip']"></span>
+  <aside :class="cls.aside">
+    <div :class="cls.card">
+      <div :class="cls.imageWrapper">
+        <div :class="cls.chip"></div>
       </div>
-      <div :class="s['bank-card__title']">V-BANK</div>
+      <p :class="cls.title">V-BANK</p>
     </div>
 
-    <button :class="s['add-card']" type="button" @click="onAddClick">+</button>
+    <button :class="cls.button" type="button" @click="onAddClick">+</button>
   </aside>
- </template>
+</template>
 
 <script setup lang="ts">
-import s from './Aside.module.css'
-const emit = defineEmits<{(e:'add'):void}>()
+import cls from './Aside.module.css'
+const emit = defineEmits<{ (e: 'add'): void }>()
 function onAddClick() { emit('add') }
 </script>
 
-<style scoped>
-</style>
-
-
+<style scoped></style>

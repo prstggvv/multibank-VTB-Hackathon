@@ -1,34 +1,42 @@
 <template>
   <section :class="cls['my-cards']">
-    <h2 :class="cls['section-title']">My Cards</h2>
+    <h2 :class="cls.mainTitle">My Cards</h2>
     <div :class="cls.cards">
       <div v-for="(c, i) in cards" :key="i"
         :class="[cls.card, (c.id === selectedId || c.primary) ? cls['card--primary'] : cls['card--light']]"
         role="button" @click="$emit('select', c.id)">
-        <div :class="cls['card__row']">
-          <div>
-            <div :class="cls.label">Balance</div>
-            <div :class="cls.value">{{ c.balance }}</div>
+        <div :class="cls.mainInfo">
+          <div :class="cls.mainRow">
+            <div :class="cls.row">
+              <p :class="cls.label">Баланс</p>
+              <p :class="cls.value">{{ c.balance }}</p>
+            </div>
+            <img :class="[cls.chip, !c.primary ? cls['chip--muted'] : '']"
+              src="/src/shared/assets/images/icons/Chip.svg" alt="chip" />
           </div>
-          <img :class="[cls.chip, !c.primary ? cls['chip--muted'] : '']" src="/src/shared/assets/images/icons/Chip.svg"
-            alt="chip" />
-        </div>
-        <div :class="[cls['card__row'], cls['card__meta']]">
-          <div>
-            <div :class="cls.label">CARD HOLDER</div>
-            <div :class="[cls.value, cls['value--sm']]">
-              {{ c.holder }}
+          <div :class="cls.mainRow">
+            <div :class="cls.row">
+              <p :class="cls.label">
+                CARD HOLDER
+              </p>
+              <p :class="[cls.value, cls.valueSum]">
+                {{ c.holder }}
+              </p>
+            </div>
+            <div :class="cls.row">
+              <p :class="cls.label">
+                VALID THRU
+              </p>
+              <p :class="[cls.value, cls.valueSum]">
+                {{ c.validThru }}
+              </p>
             </div>
           </div>
-          <div>
-            <div :class="cls.label">VALID THRU</div>
-            <div :class="[cls.value, cls['value--sm']]">
-              {{ c.validThru }}
-            </div>
-          </div>
         </div>
-        <div :class="cls['card__number']">
-          {{ c.number }}
+        <div :class="cls.block">
+          <p :class="cls.number">
+            {{ c.number }}
+          </p>
         </div>
       </div>
     </div>

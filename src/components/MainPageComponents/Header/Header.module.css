@@ -5,12 +5,12 @@
 
 .container {
   max-width: 1440px;
-  padding: 33px 41px;
+  padding: 33px 0px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 66px;
+  gap: 105px;
 }
 
 .logoContainer {
