@@ -1,0 +1,62 @@
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card,
+.addCard {
+  width: 100%;
+  border-radius: 16px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  height: 112px;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.card {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #5a4bff 100%);
+  color: var(--color-light);
+}
+
+.cardActive {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.card:hover,
+.addCard:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.imageWrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chip {
+  width: 20px;
+  height: 14px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.title {
+  font-family: var(--font-inter-bold);
+  font-size: 18px;
+  text-align: left;
+}
+
+.addCard {
+  background: var(--color-light);
+  color: var(--color-premium);
+  font-size: 28px;
+  font-family: var(--font-inter-medium);
+  align-items: center;
+  justify-content: center;
+}
