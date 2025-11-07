@@ -4,27 +4,39 @@
   gap: 20px;
 }
 
-.card {
-  padding: 20px;
+.card,
+.addCard {
+  width: 100%;
   border-radius: 16px;
-  background: linear-gradient(135deg, var(--color-primary) 0%, #5a4bff 100%);
-  box-shadow: var(--shadow-lg);
-  color: var(--color-light);
-  height: 112px;
+  border: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 20px;
+  height: 112px;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.card {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #5a4bff 100%);
+  color: var(--color-light);
+}
+
+.cardActive {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.card:hover,
+.addCard:hover {
+  box-shadow: var(--shadow-lg);
 }
 
 .imageWrapper {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.bank-card__icon {
-  width: 28px;
-  height: 28px;
+  justify-content: flex-end;
 }
 
 .chip {
@@ -35,24 +47,16 @@
 }
 
 .title {
-  font-family: var(--font-inter-regular);
-  font-size: 22px;
-  line-height: 26px;
-  margin: 0;
+  font-family: var(--font-inter-bold);
+  font-size: 18px;
+  text-align: left;
 }
 
-.button {
-  height: 112px;
-  border-radius: 16px;
+.addCard {
   background: var(--color-light);
-  border: none;
-  box-shadow: var(--shadow-md);
-  font-size: 28px;
   color: var(--color-premium);
+  font-size: 28px;
   font-family: var(--font-inter-medium);
-  cursor: pointer;
-}
-
-.button:hover {
-  box-shadow: var(--shadow-lg);
+  align-items: center;
+  justify-content: center;
 }

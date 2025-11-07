@@ -2,16 +2,16 @@
   <section :class="cls['my-cards']">
     <h2 :class="cls.mainTitle">My Cards</h2>
     <div :class="cls.cards">
-      <div v-for="(c, i) in cards" :key="i"
-        :class="[cls.card, (c.id === selectedId || c.primary) ? cls['card--primary'] : cls['card--light']]"
-        role="button" @click="$emit('select', c.id)">
+      <div v-for="c in cards" :key="c.id"
+        :class="[cls.card, c.id === selectedId ? cls['card--primary'] : cls['card--light']]" role="button"
+        @click="$emit('select', c.id)">
         <div :class="cls.mainInfo">
           <div :class="cls.mainRow">
             <div :class="cls.row">
-              <p :class="cls.label">Баланс</p>
+              <p :class="cls.label">BALANCE</p>
               <p :class="cls.value">{{ c.balance }}</p>
             </div>
-            <img :class="[cls.chip, !c.primary ? cls['chip--muted'] : '']"
+            <img :class="[cls.chip, c.id === selectedId ? '' : cls['chip--muted']]"
               src="/src/shared/assets/images/icons/Chip.svg" alt="chip" />
           </div>
           <div :class="cls.mainRow">

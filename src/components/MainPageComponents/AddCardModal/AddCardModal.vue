@@ -1,26 +1,14 @@
 <template>
-  <div v-if="open" :class="s.modalOverlay" @click.self="onClose">
-    <div :class="s.modal">
-      <div :class="s.modalTitle">Add new card</div>
-      <label :class="s.modalRow">
-        <span>Balance</span>
-        <input v-model="local.balance" :class="s.modalInput" placeholder="$5,756" />
+  <div v-if="open" :class="cls.modalOverlay" @click.self="onClose">
+    <div :class="cls.modal">
+      <div :class="cls.modalTitle">Add new bank</div>
+      <label :class="cls.modalRow">
+        <span>Bank name</span>
+        <input v-model.trim="local.name" :class="cls.modalInput" placeholder="Aurora Bank" />
       </label>
-      <label :class="s.modalRow">
-        <span>Card holder</span>
-        <input v-model="local.holder" :class="s.modalInput" placeholder="Eddy Cusuma" />
-      </label>
-      <label :class="s.modalRow">
-        <span>Valid thru</span>
-        <input v-model="local.validThru" :class="s.modalInput" placeholder="12/22" />
-      </label>
-      <label :class="s.modalRow">
-        <span>Card number</span>
-        <input v-model="local.number" :class="s.modalInput" placeholder="3778 **** **** 1234" />
-      </label>
-      <div :class="s.modalActions">
-        <button :class="[s.btn, s.btnGhost]" @click="onClose">Cancel</button>
-        <button :class="[s.btn, s.btnPrimary]" @click="onSubmit">Add</button>
+      <div :class="cls.modalActions">
+        <button :class="[cls.btn, cls.btnGhost]" @click="onClose">Cancel</button>
+        <button :class="[cls.btn, cls.btnPrimary]" @click="onSubmit">Add</button>
       </div>
     </div>
   </div>
@@ -28,31 +16,27 @@
 
 <script setup lang="ts">
 import { reactive, watch } from 'vue'
-import s from './AddCardModal.module.css'
+import cls from './AddCardModal.module.css'
 
-type Card = {
-  balance: string
-  holder: string
-  validThru: string
-  number: string
-  primary?: boolean
+interface BankPayload {
+  name: string
 }
 
 const props = defineProps<{ open: boolean }>()
-const emit = defineEmits<{(e:'close'):void, (e:'submit', card: Card):void}>()
+const emit = defineEmits<{ (e: 'close'): void; (e: 'submit', bank: BankPayload): void }>()
 
-const empty: Card = { balance: '', holder: '', validThru: '', number: '', primary: false }
-const local = reactive<Card>({ ...empty })
+const empty: BankPayload = { name: '' }
+const local = reactive<BankPayload>({ ...empty })
 
 function onClose() { emit('close') }
 function onSubmit() {
-  if (!local.balance || !local.holder || !local.validThru || !local.number) return
+  if (!local.name) return
   emit('submit', { ...local })
   Object.assign(local, empty)
 }
 
-watch(() => props.open, (v) => {
-  if (!v) Object.assign(local, empty)
+watch(() => props.open, (value) => {
+  if (!value) Object.assign(local, empty)
 })
 </script>
 

@@ -1,150 +1,244 @@
 {
-  "cards": [
+  "banks": [
     {
-      "id": "c1",
-      "balance": "$5,756",
-      "holder": "Eddy Cusuma",
-      "validThru": "12/22",
-      "number": "3778 **** **** 1234",
-      "primary": true,
-      "transactions": [
+      "id": "bank-v",
+      "name": "V-BANK",
+      "cards": [
         {
-          "id": "t1",
-          "description": "Spotify Subscription",
-          "type": "Shopping",
-          "card": "1234 ****",
-          "date": "2025-01-28T00:30:00",
-          "amount": -2500
+          "id": "v-card-1",
+          "balance": "$5,756",
+          "holder": "Eddy Cusuma",
+          "validThru": "12/26",
+          "number": "3778 **** **** 1234",
+          "primary": true,
+          "transactions": [
+            {
+              "id": "t1",
+              "description": "Spotify Subscription",
+              "type": "Shopping",
+              "card": "1234 ****",
+              "date": "2025-01-28T00:30:00",
+              "amount": -2500
+            },
+            {
+              "id": "t2",
+              "description": "Salary",
+              "type": "Income",
+              "card": "1234 ****",
+              "date": "2025-01-27T09:00:00",
+              "amount": 4200
+            },
+            {
+              "id": "t3",
+              "description": "Mobile Service",
+              "type": "Service",
+              "card": "1234 ****",
+              "date": "2025-01-20T22:40:00",
+              "amount": -150
+            },
+            {
+              "id": "t4",
+              "description": "Grocery Store",
+              "type": "Shopping",
+              "card": "1234 ****",
+              "date": "2025-01-18T18:20:00",
+              "amount": -86
+            },
+            {
+              "id": "t5",
+              "description": "Electric Bill",
+              "type": "Service",
+              "card": "1234 ****",
+              "date": "2025-01-15T10:00:00",
+              "amount": -1050
+            },
+            {
+              "id": "t6",
+              "description": "Interest",
+              "type": "Income",
+              "card": "1234 ****",
+              "date": "2025-01-12T08:00:00",
+              "amount": 75
+            }
+          ]
         },
         {
-          "id": "t2",
-          "description": "Salary",
-          "type": "Income",
-          "card": "1234 ****",
-          "date": "2025-01-27T09:00:00",
-          "amount": 4200
+          "id": "v-card-2",
+          "balance": "$9,210",
+          "holder": "Eddy Cusuma",
+          "validThru": "11/25",
+          "number": "5123 **** **** 9981",
+          "transactions": [
+            {
+              "id": "t7",
+              "description": "Freepik Sales",
+              "type": "Transfer",
+              "card": "9981 ****",
+              "date": "2025-01-25T22:40:00",
+              "amount": 750
+            },
+            {
+              "id": "t8",
+              "description": "Restaurant",
+              "type": "Shopping",
+              "card": "9981 ****",
+              "date": "2025-01-22T19:15:00",
+              "amount": -64
+            },
+            {
+              "id": "t9",
+              "description": "Gym Membership",
+              "type": "Service",
+              "card": "9981 ****",
+              "date": "2025-01-21T10:00:00",
+              "amount": -45
+            },
+            {
+              "id": "t10",
+              "description": "Freelance",
+              "type": "Income",
+              "card": "9981 ****",
+              "date": "2025-01-18T12:00:00",
+              "amount": 840
+            }
+          ]
         },
         {
-          "id": "t3",
-          "description": "Mobile Service",
-          "type": "Service",
-          "card": "1234 ****",
-          "date": "2025-01-20T22:40:00",
-          "amount": -150
-        },
-        {
-          "id": "t4",
-          "description": "Grocery Store",
-          "type": "Shopping",
-          "card": "1234 ****",
-          "date": "2025-01-18T18:20:00",
-          "amount": -86
-        },
-        {
-          "id": "t5",
-          "description": "Electric Bill",
-          "type": "Service",
-          "card": "1234 ****",
-          "date": "2025-01-15T10:00:00",
-          "amount": -1050
-        },
-        {
-          "id": "t6",
-          "description": "Interest",
-          "type": "Income",
-          "card": "1234 ****",
-          "date": "2025-01-12T08:00:00",
-          "amount": 75
+          "id": "v-card-3",
+          "balance": "$3,420",
+          "holder": "Eddy Cusuma",
+          "validThru": "05/25",
+          "number": "4411 **** **** 7720",
+          "transactions": [
+            {
+              "id": "t16",
+              "description": "Airbnb",
+              "type": "Travel",
+              "card": "7720 ****",
+              "date": "2025-01-19T16:10:00",
+              "amount": -320
+            },
+            {
+              "id": "t17",
+              "description": "Airport Lounge",
+              "type": "Service",
+              "card": "7720 ****",
+              "date": "2025-01-17T09:45:00",
+              "amount": -45
+            },
+            {
+              "id": "t18",
+              "description": "Cashback Bonus",
+              "type": "Income",
+              "card": "7720 ****",
+              "date": "2025-01-15T07:00:00",
+              "amount": 60
+            },
+            {
+              "id": "t19",
+              "description": "Hotel Booking",
+              "type": "Travel",
+              "card": "7720 ****",
+              "date": "2025-01-11T12:00:00",
+              "amount": -540
+            }
+          ]
         }
       ]
     },
     {
-      "id": "c2",
-      "balance": "$9,210",
-      "holder": "Eddy Cusuma",
-      "validThru": "11/23",
-      "number": "5123 **** **** 9981",
-      "transactions": [
+      "id": "bank-aurora",
+      "name": "Aurora Bank",
+      "cards": [
         {
-          "id": "t7",
-          "description": "Freepik Sales",
-          "type": "Transfer",
-          "card": "9981 ****",
-          "date": "2025-01-25T22:40:00",
-          "amount": 750
+          "id": "a-card-1",
+          "balance": "$7,880",
+          "holder": "Eddy Cusuma",
+          "validThru": "08/24",
+          "number": "6234 **** **** 8811",
+          "transactions": [
+            {
+              "id": "t20",
+              "description": "Wilson",
+              "type": "Transfer",
+              "card": "8811 ****",
+              "date": "2025-01-15T15:29:00",
+              "amount": -1050
+            },
+            {
+              "id": "t21",
+              "description": "Refund",
+              "type": "Income",
+              "card": "8811 ****",
+              "date": "2025-01-14T10:40:00",
+              "amount": 840
+            },
+            {
+              "id": "t22",
+              "description": "Taxi",
+              "type": "Service",
+              "card": "8811 ****",
+              "date": "2025-01-10T21:30:00",
+              "amount": -25
+            },
+            {
+              "id": "t23",
+              "description": "Book Store",
+              "type": "Shopping",
+              "card": "8811 ****",
+              "date": "2025-01-08T13:00:00",
+              "amount": -37
+            },
+            {
+              "id": "t24",
+              "description": "Dividend",
+              "type": "Income",
+              "card": "8811 ****",
+              "date": "2025-01-05T09:00:00",
+              "amount": 120
+            }
+          ]
         },
         {
-          "id": "t8",
-          "description": "Restaurant",
-          "type": "Shopping",
-          "card": "9981 ****",
-          "date": "2025-01-22T19:15:00",
-          "amount": -64
-        },
-        {
-          "id": "t9",
-          "description": "Gym Membership",
-          "type": "Service",
-          "card": "9981 ****",
-          "date": "2025-01-21T10:00:00",
-          "amount": -45
-        },
-        {
-          "id": "t10",
-          "description": "Freelance",
-          "type": "Income",
-          "card": "9981 ****",
-          "date": "2025-01-18T12:00:00",
-          "amount": 840
-        }
-      ]
-    },
-    {
-      "id": "c3",
-      "balance": "$11,512",
-      "holder": "Eddy Cusuma",
-      "validThru": "12/22",
-      "number": "9012 **** **** 3333",
-      "transactions": [
-        {
-          "id": "t11",
-          "description": "Wilson",
-          "type": "Transfer",
-          "card": "3333 ****",
-          "date": "2025-01-15T15:29:00",
-          "amount": -1050
-        },
-        {
-          "id": "t12",
-          "description": "Refund",
-          "type": "Income",
-          "card": "3333 ****",
-          "date": "2025-01-14T10:40:00",
-          "amount": 840
-        },
-        {
-          "id": "t13",
-          "description": "Taxi",
-          "type": "Service",
-          "card": "3333 ****",
-          "date": "2025-01-10T21:30:00",
-          "amount": -25
-        },
-        {
-          "id": "t14",
-          "description": "Book Store",
-          "type": "Shopping",
-          "card": "3333 ****",
-          "date": "2025-01-08T13:00:00",
-          "amount": -37
-        },
-        {
-          "id": "t15",
-          "description": "Dividend",
-          "type": "Income",
-          "card": "3333 ****",
-          "date": "2025-01-05T09:00:00",
-          "amount": 120
+          "id": "a-card-2",
+          "balance": "$12,430",
+          "holder": "Eddy Cusuma",
+          "validThru": "03/27",
+          "number": "7055 **** **** 4412",
+          "transactions": [
+            {
+              "id": "t25",
+              "description": "Emilly",
+              "type": "Transfer",
+              "card": "4412 ****",
+              "date": "2025-01-14T22:05:00",
+              "amount": -640
+            },
+            {
+              "id": "t26",
+              "description": "Wilson",
+              "type": "Transfer",
+              "card": "4412 ****",
+              "date": "2025-01-12T10:20:00",
+              "amount": -420
+            },
+            {
+              "id": "t27",
+              "description": "Bonus",
+              "type": "Income",
+              "card": "4412 ****",
+              "date": "2025-01-10T08:30:00",
+              "amount": 220
+            },
+            {
+              "id": "t28",
+              "description": "Cloud Services",
+              "type": "Service",
+              "card": "4412 ****",
+              "date": "2025-01-06T18:10:00",
+              "amount": -130
+            }
+          ]
         }
       ]
     }

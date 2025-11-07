@@ -19,16 +19,8 @@ import Tabs from './Tabs.vue'
 import TableHeader from './TableHeader.vue'
 import TableBody from './TableBody.vue'
 import Pagination from './Pagination.vue'
-defineProps<{
-  transactions: Array<any>,
-  page: number,
-  totalPages: number,
-  tab: 'bank' | 'all' | 'income' | 'expense',
-}>()
-defineEmits<{
-  (e: 'changePage', page: number): void,
-  (e: 'changeTab', tab: 'bank' | 'all' | 'income' | 'expense'): void
-}>()
+defineProps<{ transactions: Array<any>, page: number, totalPages: number, tab: 'bank' | 'all' | 'income' | 'expense' }>()
+defineEmits<{ (e: 'changePage', page: number): void, (e: 'changeTab', tab: 'bank' | 'all' | 'income' | 'expense'): void }>()
 </script>
 
 <style scoped></style>

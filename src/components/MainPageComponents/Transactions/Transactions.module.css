@@ -68,12 +68,12 @@
   padding: 16px 20px;
 }
 
-.tbody .row:nth-of-type(1) {
-  border-top: 1px solid var(--divider-color);
-}
-
 .tbody .row:hover {
   background: var(--row-hover-bg);
+}
+
+.tbody .row:nth-of-type(1) {
+  border-top: 1px solid var(--divider-color);
 }
 
 .cell {
