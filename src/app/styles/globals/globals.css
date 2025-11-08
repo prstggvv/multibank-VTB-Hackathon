@@ -5,4 +5,19 @@
   --color-premium: rgba(0, 0, 0, 1);
   --color-light: rgba(255, 255, 255, 1);
   --background-color-premium: rgba(244, 246, 250, 1);
+  --color-primary: #2F49D1;
+  --color-muted: #7b8193;
+  --divider-color: #e6e9f2;
+  --row-hover-bg: #f7f8fb;
+  --table-header-bg: #fafbff;
+  --color-negative: #d34b37;
+  --color-positive: #2a9e55;
+  --shadow-md: 0 6px 18px rgba(31, 47, 70, 0.08);
+  --shadow-md-hover: 8px 15px 20px rgba(16, 21, 29, 0.2);
+  --shadow-lg: 0 10px 30px rgba(31, 47, 70, 0.16);
+  --font-inter-light: 'Inter-Light', sans-serif;
+  --font-inter-regular: 'Inter-Regular', sans-serif;
+  --font-inter-medium: 'Inter-Medium', sans-serif;
+  --font-inter-bold: 'Inter-Bold', sans-serif;
+  --error-color: #862308;
 }
