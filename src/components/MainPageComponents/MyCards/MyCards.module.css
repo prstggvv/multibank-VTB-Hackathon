@@ -8,6 +8,8 @@
   font-family: var(--font-inter-bold);
   font-size: 20px;
   color: var(--color-premium);
+  margin: 0;
+  line-height: 19px;
 }
 
 .cards {

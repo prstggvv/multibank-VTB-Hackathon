@@ -8,6 +8,8 @@
   font-family: var(--font-inter-bold);
   font-size: 20px;
   color: var(--color-premium);
+  margin: 0;
+  line-height: 19px;
 }
 
 .tabs {
@@ -50,7 +52,6 @@
 }
 
 .headCell {
-  border-right: 1px solid var(--divider-color);
   padding-right: 10px;
 }
 
@@ -85,6 +86,7 @@
   font-size: 16px;
   line-height: 19px;
   font-family: var(--font-inter-regular);
+  margin: 0;
 }
 
 .desc {
