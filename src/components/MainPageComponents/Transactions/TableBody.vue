@@ -6,11 +6,8 @@
 
 <script setup lang="ts">
 import cls from './Transactions.module.css'
-import TableRow from './TableRow.vue'
+import TableRow from './TableRow.vue';
 defineProps<{ transactions: Array<any> }>()
 </script>
 
-<style scoped>
-</style>
-
-
+<style scoped></style>

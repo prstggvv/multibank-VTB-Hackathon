@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import cls from './Transactions.module.css'
+import cls from './Transactions.module.css';
 </script>
 
 <style scoped></style>
