@@ -1,0 +1,28 @@
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: rgb(32, 32, 32);
+}
+
+.container {
+  width: 100%;
+  max-width: 396px;
+  margin: 0 auto;
+}
+
+.formButton {
+  width: 100%;
+  padding: 14px;
+  background-color: #D3D3D3;
+  color: #000000;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.formButtonActive {
+  opacity: 1;
+  cursor: pointer;
+}
