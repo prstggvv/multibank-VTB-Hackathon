@@ -43,23 +43,24 @@
   </main>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { ref } from 'vue'
 import Form from '../../components/Form/Form.vue'
 import Input from '../../shared/ui/Input/Input.vue'
 import Button from '../../shared/ui/Button/Button.vue'
 import { useValidation } from '../../shared/lib/hooks/useValidation'
 import './LoginPage.css'
+import { useRootStore } from '../../stores/root'
+import { useRouter } from 'vue-router'
 
-interface LoginPageProps {
-  className?: string
-}
+defineProps({
+  className: String
+})
 
-defineProps<LoginPageProps>()
+const rootStore = useRootStore();
+const router = useRouter();
 
-const emit = defineEmits<{
-  login: [email: string, password: string]
-}>()
+
 
 const {
   values,
@@ -68,16 +69,16 @@ const {
   handleChange,
 } = useValidation({})
 
-const passwordIcon = ref<'HideIcon' | 'ShowIcon'>('HideIcon')
-const passwordType = ref<'text' | 'password'>('password')
+const passwordIcon = ref('HideIcon')
+const passwordType = ref('password')
 
-const handleInputChange = (name: string, value: string) => {
+const handleInputChange = (name, value) => {
   const event = {
     target: {
       name,
       value
     }
-  } as Event & { target: { name: string; value: string } }
+  }
   handleChange(event)
 }
 
@@ -91,13 +92,19 @@ const handleClickIcon = () => {
   }
 }
 
-const handleSubmit = (e: Event) => {
+const handleSubmit = async(e) => {
   e.preventDefault()
   const email = values.email || ''
   const password = values.password || ''
+  
   if (email && password) {
-    emit('login', email, password)
+    try {
+      await rootStore.signin({email, password});
+      console.log(rootStore.isAuthenticated);
+      router.push('/dashboard/')
+    } catch (err) {
+      console.log(err);
+    }
   }
 }
 </script>
-

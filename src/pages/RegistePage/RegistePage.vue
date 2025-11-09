@@ -50,10 +50,15 @@ import Input from '../../shared/ui/Input/Input.vue'
 import Button from '../../shared/ui/Button/Button.vue'
 import { useValidation } from '../../shared/lib/hooks/useValidation'
 import './RegistePage.css'
+import { useRootStore } from '../../stores/root'
+import { useRouter } from 'vue-router'
 
 interface RegistePageProps {
   className?: string
 }
+
+const rootStore = useRootStore()
+const router = useRouter()
 
 defineProps<RegistePageProps>()
 
@@ -91,12 +96,18 @@ const handleClickIcon = () => {
   }
 }
 
-const handleSubmit = (e: Event) => {
+const handleSubmit = async(e: Event) => {
   e.preventDefault()
   const email = values.email || ''
   const password = values.password || ''
   if (email && password) {
-    emit('register', email, password)
+    try {
+      await rootStore.signin({email, password});
+      console.log(rootStore.isAuthenticated);
+      router.push('/dashboard/')
+    } catch (err) {
+      console.log(err);
+    }
   }
 }
 </script>

@@ -1,4 +1,4 @@
-import {defineStore} from 'pinia';
+import { defineStore } from 'pinia';
 import Cookies from 'js-cookie';
 
 export const useRootStore = defineStore('root', {
@@ -6,29 +6,30 @@ export const useRootStore = defineStore('root', {
     isLoading: false,
     user: {},
     isAuth: false,
-    apiBaseUrl: "",
+    apiBaseUrl: "http://127.0.0.1:8000",
     token: Cookies.get('auth_token') || '',
-
   }),
-  geters: {
+  
+  getters: {
     getUser: (state) => state.user,
     isAuthenticated: (state) => state.isAuth,
     getIsLoading: (state) => state.isLoading,
   },
+  
   actions: {
     async setUser() {
       if (!this.token) return;
       try {
         const response = await fetch(`${this.apiBaseUrl}/user/`, {
           headers: {
-            'Authorization': `Bearer ${token}`,
+            'Authorization': `Bearer ${this.token}`,
             'Content-Type': 'application/json'  
           }
         });
         const result = await response.json();
         if (!result) {
           this.isAuth = false;
-          Cookies.remove(auth_token);
+          Cookies.remove('auth_token');
         } else {
           this.isAuth = true;
           this.user = result;
@@ -36,24 +37,6 @@ export const useRootStore = defineStore('root', {
       } catch (error) {
         console.log(error);
       } finally {
-        this.Loading = false;
-      }
-    },
-
-    async signin(userData) {
-      this.isLoading = true;
-      try {
-        const response = await fetch(`${this.apiBaseUrl}/signin/`, {
-          method: 'POST',
-          headers: {},
-          body: JSON.stringify(userData),
-        });
-        const result = await response.json();
-        Cookies.set('auth_token', result.token, { expires: 7 });
-        console.log(result);
-      } catch (err) {
-        console.log(err)
-      } finally {
         this.isLoading = false;
       }
     },
@@ -61,19 +44,56 @@ export const useRootStore = defineStore('root', {
     async signin(userData) {
       this.isLoading = true;
       try {
-        const response = await fetch(`${this.apiBaseUrl}/signup/`, {
+        const response = await fetch(`${this.apiBaseUrl}/auth/login/`, {
           method: 'POST',
-          headers: {},
+          headers: {
+            'Content-Type': 'application/json'
+          },
           body: JSON.stringify(userData),
         });
         const result = await response.json();
-        Cookies.set('auth_token', result.token, { expires: 7 });
-        console.log(result);
+        if (result.access_token) {
+          this.token = result.access_token;
+          Cookies.set('auth_token', result.access_token, { expires: 7 });
+          this.isAuth = true;
+        }
       } catch (err) {
-        console.log(err)
+        console.log(err);
+        throw new Error(err);
       } finally {
         this.isLoading = false;
       }
+    },
+
+    async signup(userData) {
+      this.isLoading = true;
+      try {
+        const response = await fetch(`${this.apiBaseUrl}/auth/register/`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(userData),
+        });
+        const result = await response.json();
+        if (result.access_token) {
+          this.token = result.access_token;
+          Cookies.set('auth_token', result.access_token, { expires: 7 });
+          this.isAuth = true;
+        }
+      } catch (err) {
+        console.log(err);
+        throw new Error(err);
+      } finally {
+        this.isLoading = false;
+      }
+    },
+
+    logout() {
+      this.token = '';
+      this.user = {};
+      this.isAuth = false;
+      Cookies.remove('auth_token');
     }
   }
 })

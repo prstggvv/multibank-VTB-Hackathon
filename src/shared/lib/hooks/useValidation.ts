@@ -13,13 +13,13 @@ const validate = (values: InputItems) => {
     errors.email = 'Введите корректный E-mail'
   }
 
-  if (!values.password) {
-    errors.password = 'Заполните поле пароль'
-  } else if (values.password.length < 8) {
-    errors.password = 'Пароль не может быть меньше 8 символов'
-  } else if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}$/.test(values.password)) {
-    errors.password = 'Пароль должен состоять из строчных и прописных латинских букв, спецсимволов, цифр'
-  }
+  // if (!values.password) {
+  //   errors.password = 'Заполните поле пароль'
+  // } else if (values.password.length < 8) {
+  //   errors.password = 'Пароль не может быть меньше 8 символов'
+  // } else if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}$/.test(values.password)) {
+  //   errors.password = 'Пароль должен состоять из строчных и прописных латинских букв, спецсимволов, цифр'
+  // }
 
   return errors
 }

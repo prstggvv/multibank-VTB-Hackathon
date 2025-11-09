@@ -2,6 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import MainPage from '../../pages/MainPage/MainPage.vue'
 import LoginPage from '../../pages/LoginPage/LoginPage.vue'
 import RegistePage from '../../pages/RegistePage/RegistePage.vue'
+import {  useRootStore } from '../../stores/root'
+
+
 
 const routes = [
   {
@@ -32,7 +35,8 @@ export const router = createRouter({
 router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
   const existingPage = to.matched.length > 0;
-  const isAuthenticated = true;
+  const rootStore = useRootStore();
+  const isAuthenticated = rootStore.isAuthenticated;
 
  
   if (requiresAuth && !isAuthenticated) {

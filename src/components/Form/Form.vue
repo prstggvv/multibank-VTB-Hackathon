@@ -9,11 +9,11 @@
         class="li"
         to="/"
       >
-        <img 
+        <!-- <img 
           class="svg"
           src="/vite.svg"
           alt="логотип"
-        />
+        /> -->
       </router-link>
       <h1 class="title">
         {{ textTitle }}
