@@ -2,7 +2,7 @@
   <header :class="cls.header">
     <div :class="cls.container">
       <div :class="cls.logoContainer">
-        <img :class="cls.logo" src="../../../shared/assets/images/icons/Logo.svg" />
+        <h1 class="cls.logoTitle">FinAssist</h1>
       </div>
       <div :class="cls.mainBlock">
         <h1 :class="cls.title">Транзакции</h1>

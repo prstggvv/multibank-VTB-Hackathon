@@ -83,29 +83,6 @@ class BankConfig:
         }
         
     
-    # @classmethod
-    # def get_bank_headers_accounts(cls, access_token: str, consent_id: str = None, user_id: int = None) -> Dict[str, str]:
-    #     headers = {
-    #         "Authorization": f"Bearer {access_token}",
-    #         "X-Requesting-Bank": cls.REQUESTING_BANK,
-    #         "X-Consent-Id": consent_id
-    #     }
-
-    #     if consent_id:
-    #         headers["X-Consent-Id"] = consent_id
-
-    #     if user_id:
-    #         headers["X-Client-Id"] = cls.generate_user_client_id(user_id)
-
-    #     return headers
-    
-    # @classmethod
-    # def get_bank_headers_consent(cls) -> Dict[str, str]:
-    #     headers = {
-    #         "X-Requesting-Bank": cls.REQUESTING_BANK,
-    #     }
-    #     return headers
-    
     @classmethod
     def get_bank_config(cls, bank_name: str) -> Dict[str, str]:
         bank_name = bank_name.lower()

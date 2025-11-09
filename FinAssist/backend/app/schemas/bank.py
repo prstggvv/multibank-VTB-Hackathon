@@ -14,7 +14,7 @@ class BankAuthRequest(BaseModel):
 class BankAuthResponse(BaseModel):
     message: str = Field(..., description="Сообщение о результате")
     success: bool = Field(..., description="Успешно ли подключение")
-    connection_id: Optional[int] = Field(None, description="ID созданного подключения")
+    connection_id: Optional[str] = Field(None, description="ID созданного подключения")
     bank_name: str = Field(..., description="Название банка")
 
 class BankConnectionResponse(BaseModel):

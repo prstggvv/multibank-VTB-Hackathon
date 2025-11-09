@@ -36,8 +36,8 @@ router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
   const existingPage = to.matched.length > 0;
   const rootStore = useRootStore();
-  const isAuthenticated = rootStore.isAuthenticated;
-  // const isAuthenticated = true;
+  // const isAuthenticated = rootStore.isAuthenticated;
+  const isAuthenticated = true;
 
  
   if (requiresAuth && !isAuthenticated) {

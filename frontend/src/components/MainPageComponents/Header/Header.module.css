@@ -25,6 +25,12 @@
   object-position: center;
 }
 
+.logoTitle {
+  font-size: 18px;
+  font-family: var(--font-inter-regular);
+  line-height: 18px;
+}
+
 .mainBlock {
   width: 100%;
   display: flex;

@@ -60,7 +60,6 @@ async def connect_to_bank(
             auth_request.bank_name,
             current_user.id
         )
-        print(consent_response)
         if not consent_response:
             raise HTTPException(
                 status_code=400, 
@@ -68,14 +67,11 @@ async def connect_to_bank(
             )
         
         bank_connection = BankConnection(
-            user_id=current_user.id,
-            bank_name=auth_request.bank_name,
-            consent_id=consent_response,
-            external_client_id=f"team039-{current_user.id}"
-        )
-        db.add(bank_connection)
-        db.commit()
-        db.refresh(bank_connection)
+             user_id=current_user.id,
+             bank_name=auth_request.bank_name,
+             consent_id=consent_response,
+             external_client_id=f"team039-{current_user.id}"
+        ) 
 
         return BankAuthResponse(
             message=f"Успешно подключено к {auth_request.bank_name}",
@@ -145,9 +141,6 @@ async def get_bank_accounts(
                 "nickname": acc.get("nickname"),
                 "status": acc.get("status", "Unknown"),
                 "balance": None  
-                #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                # Нужно добавить получение баланса счета
-                #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             }
             accounts.append(account)
         

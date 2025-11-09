@@ -165,52 +165,11 @@ class BankAPIService:
 
 
 
-
-    # async def get_transactions(self, bank_name: str, account_id: str, user_id:int) -> Optional[Dict[str, Any]]:
-    #     try:
-    #         access_token = await self.get_bank_token(bank_name)
-    #         if not access_token:
-    #             print(f"Не удалось получить токен для запроса транзакций от {bank_name}")
-    #             return None
-            
-    #         consent_id = await self.ensure_consent(bank_name, user_id)
-    #         print(consent_id)
-    #         if not consent_id:
-    #             print(f"Не удалось получить согласие для запроса счетов от {bank_name}")
-    #             return None
-        
-            
-    #         bank_config = BankConfig.get_bank_config(bank_name)
-    #         transactions_url = bank_config["transactions_url"].format(account_id=account_id)
-            
-    #         print(consent_id)
-    #         print( f"{bank_config['base_url']}{transactions_url}")
-    #         async with httpx.AsyncClient() as client:
-    #             response = await client.get(
-    #                 f"{bank_config['base_url']}{transactions_url}",
-    #                 headers={"Authorization": f"Bearer {access_token}",
-    #                          "X-Requesting-Bank": "team039",
-    #                          "X-Consent-Id": consent_id,
-    #                          }
-    #             )
-    #             if response.status_code == 200:
-    #                 transactions_data = response.json()
-    #                 return transactions_data
-    #             print(f"Ошибка получения транзакций от {bank_name}: {response.status_code} - {response.text}")
-    #             return None
-            
-    #     except Exception as e:
-    #         print(f"Исключение при получении транзакций от {bank_name}: {e}")
-            
-    #         return None
-        
-
-
     async def get_balances(self, bank_name: str, account_id: str, user_id:int) -> Optional[Dict[str, Any]]:
         try:
             access_token = await self.get_bank_token(bank_name)
             if not access_token:
-                print(f"Не удалось получить токен для запроса транзакций от {bank_name}")
+                print(f"Не удалось получить токен для запроса баланса от {bank_name}")
                 return None
             
             consent_id = await self.ensure_consent(bank_name, user_id)
@@ -235,11 +194,11 @@ class BankAPIService:
                 if response.status_code == 200:
                     transactions_data = response.json()
                     return transactions_data
-                print(f"Ошибка получения транзакций от {bank_name}: {response.status_code} - {response.text}")
+                print(f"Ошибка получения баланса от {bank_name}: {response.status_code} - {response.text}")
                 return None
             
         except Exception as e:
-            print(f"Исключение при получении транзакций от {bank_name}: {e}")
+            print(f"Исключение при получении баланса от {bank_name}: {e}")
             
             return None
 
